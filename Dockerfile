@@ -6,10 +6,11 @@ ENV FLASK_ENV=development
 COPY requirements.txt /tmp/
 RUN pip install --requirement /tmp/requirements.txt
 
-RUN addgroup -S hello && adduser -S hello -G hello
-USER hello
+USER 405
 
 COPY . /src
 WORKDIR /src
+
+EXPOSE 5000
 
 CMD ["flask", "run", "--host=0.0.0.0"]
