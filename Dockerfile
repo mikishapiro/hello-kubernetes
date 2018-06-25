@@ -6,6 +6,7 @@ ENV FLASK_ENV=development
 COPY requirements.txt /tmp/
 RUN pip install --requirement /tmp/requirements.txt
 
+ENV USER=guest
 USER 405
 
 COPY . /src
